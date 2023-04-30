@@ -1,0 +1,31 @@
+// Add variables here
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.btn-1 {
+    padding: 11px 31px;
+    border: 1px solid $secondaryColor;
+    background: $bglight;
+    border-radius: 45px;
+    color: $darkGreen;
+    transition: all 0.5s ease;
+    font-weight: 500;
+    &:hover {
+        color: $white;
+        background-color: $secondaryColor;
+    }
+}
+.btn-2 {
+    padding: 11px 31px;
+    border: 1px solid $secondaryColor;
+    background: $secondaryColor;
+    border-radius: 45px;
+    color: $white;
+    transition: all 0.5s ease;
+    font-weight: 500;
+
+    &:hover {
+        color: $darkGreen;
+        background: $bglight;
+    }
+}

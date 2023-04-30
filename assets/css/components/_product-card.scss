@@ -1,0 +1,298 @@
+// Add variables here
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.product-card {
+    padding: 60px 25px 45px 20px;
+    // background-color: $cardblue;
+    // width: 292px;
+    border-radius: 5px;
+
+    &--icon {
+        margin-bottom: 22px;
+
+        img {
+            height: 50px;
+            padding: 14px 13px;
+            background-color: $white;
+            border-radius: 50%;
+        }
+    }
+
+    &--title {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 28px;
+        color: #646464;
+        margin-bottom: 8px;
+        width: 234px;
+    }
+
+    &--sub-title {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 18px;
+        color: #808080;
+        width: 245px;
+    }
+}
+
+.item {
+    padding: 0 40px;
+
+    .icon {
+        margin-bottom: 24px;
+        position: relative;
+
+        img {
+            height: 65px;
+        }
+
+        &.sell-icon-1 {
+            &::before {
+                content: "";
+                position: absolute;
+                width: 80px;
+                height: 80px;
+                background-color: #01A368;
+                border-radius: 50%;
+                z-index: -1;
+                top: -10px;
+                left: 5px;
+            }
+        }
+
+        &.sell-icon-2 {
+            &::before {
+                content: "";
+                position: absolute;
+                width: 80px;
+                height: 80px;
+                background-color: #01A368;
+                border-radius: 50%;
+                z-index: -1;
+                top: 5px;
+                left: 30px;
+            }
+        }
+
+        &.sell-icon-3 {
+            &::before {
+                content: "";
+                position: absolute;
+                width: 80px;
+                height: 80px;
+                background-color: #01A368;
+                border-radius: 50%;
+                z-index: -1;
+                top: 0px;
+                left: 25px;
+            }
+        }
+
+        &.sell-icon-4 {
+            &::before {
+                content: "";
+                position: absolute;
+                width: 80px;
+                height: 80px;
+                background-color: #01A368;
+                border-radius: 50%;
+                z-index: -1;
+                top: -5px;
+                left: 25px;
+            }
+        }
+    }
+
+    .title {
+        font-size: 20px;
+        line-height: 26px;
+        color: #050505;
+        margin-bottom: 5px;
+    }
+
+    .sub-title {
+        font-size: 14px;
+        line-height: 22px;
+        color: #808080;
+        // width: 200px;
+    }
+}
+
+.price-card {
+    padding: 40px;
+    border: 1px solid #01A368;
+    text-align: left;
+    border-radius: 12px;
+
+    .icon {
+        margin-bottom: 11px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .title {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 26px;
+        margin-bottom: 4px;
+        color: $black;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 8px;
+        color: #808080;
+    }
+
+    .value {
+        font-size: 39px;
+        font-weight: 700;
+        line-height: 53px;
+        margin-bottom: 2px;
+        color: $secondaryColor;
+    }
+
+    .date {
+        font-size: 14px;
+        line-height: 18px;
+        margin-bottom: 33px;
+        padding-bottom: 33px;
+        color: #646464;
+        font-weight: 600;
+        border-bottom: 1px solid #808080;
+    }
+
+    ul {
+        margin-bottom: 40px;
+
+        li {
+            color: #808080;
+
+            i {
+                margin-right: 11px;
+                color: $secondaryColor;
+            }
+
+            &.cross {
+                text-decoration: line-through;
+            }
+        }
+    }
+
+    .price-btn {
+        background-color: #f4f4f4;
+    }
+
+    .price-btn-2 {
+        width: 100%;
+    }
+}
+
+@include breakpoint-max(991px) {
+    .item {
+        .icon {
+            &.sell-icon-1 {
+                &::before {
+                    top: -10px;
+                    left: 15px;
+                }
+            }
+
+            &.sell-icon-2 {
+                &::before {
+                    top: 0px;
+                    left: 35px;
+                }
+            }
+
+            &.sell-icon-3 {
+                &::before {
+                    top: 0px;
+                    left: 20px;
+                }
+            }
+
+            &.sell-icon-4 {
+                &::before {
+                    top: -5px;
+                    left: 37px;
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint-max(767px) {
+    .product-card {
+        padding: 35px 25px 35px 20px;
+        &--icon {
+            margin-bottom: 14px;
+            img {
+                height: 40px;
+                padding: 7px 7px;
+            }
+        }
+        &--title {
+            font-size: 18px;
+            line-height: 22px;
+            margin-bottom: 5px;
+            width: 100%;
+        }
+        &--sub-title {
+            font-size: 16px;
+        }
+    }
+
+    .item {
+        width: 200px;
+        margin: 0 0 20px 0;
+        padding: 0;
+        .icon {
+            margin-bottom: 18px;
+        }
+        .title {
+            font-size: 18px;
+            line-height: 20px;
+        }
+    } 
+
+    .price-card {
+        padding: 20px;
+        .title {
+            font-size: 18px;
+            line-height: 20px;
+        }
+        p {
+            margin-bottom: 5px;
+        }
+        .value {
+            font-size: 28px;
+            line-height: 40px;
+        }
+        .date {
+            line-height: 16px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+        }
+        ul {
+            margin-bottom: 20px;
+            li {
+                font-size: 14px;
+                i {
+                    margin-right: 5px;
+                }
+            }
+        }
+        .btn-1 {
+            padding: 9px 31px;
+            font-size: 14px;
+        }
+        .btn-2 {
+            padding: 9px 31px;
+            font-size: 14px;
+        }
+    }
+}

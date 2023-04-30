@@ -1,0 +1,291 @@
+// Add variables here
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+/*************** Home CSS ***************/
+
+.hero-section {
+    &--area {
+        display: flex;
+
+        &---content {
+            width: 50%;
+
+            .title {
+                font-size: 60px;
+                font-weight: 700;
+                line-height: 64px;
+                color: $darkGreen;
+                margin-bottom: 20px;
+
+                span {
+                    color: $secondaryColor;
+                    font-style: italic;
+                }
+            }
+
+            p {
+                margin-bottom: 25px;
+                color: #0A3C23;
+                line-height: 25px;
+                font-weight: 400;
+                font-size: 18px;
+            }
+
+            .hero-btn {
+                padding: 15px 25px;
+            }
+        }
+
+        &---image {
+            width: 50%;
+            display: flex;
+            // position: relative;
+
+            .hero-image {
+                &-left {
+                    transform: translateX(78px);
+
+                    img {
+                        height: 100%;
+                        object-fit: fill;
+                        width: 720px;
+                    }
+                }
+
+                &-right {
+                    img {
+                        height: 100%;
+                        object-fit: cover;
+                        width: 600px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.service-section {
+    position: relative;
+    text-align: center;
+
+    .section-header {
+        margin-bottom: 25px;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 28px;
+        color: #5B5B5B;
+        margin-bottom: 25px;
+    }
+
+    .service-btn {
+        padding: 17px 24px;
+        margin-bottom: 70px;
+    }
+
+    &--image {
+        .image {
+            &-main {
+                // top: 0;
+                // position: relative;
+                // // left: 65px;
+                // transform: translate(60px, 0);
+            }
+        }
+    }
+
+    .image {
+        position: absolute;
+        top: 360px;
+        right: 277px;
+        z-index: -1;
+    }
+}
+
+.sale-section {
+    &--area {
+        .with-header {
+
+            .section-header {
+                p {
+                    margin-top: 16px;
+                    color: #666666;
+                    width: 450px;
+                    font-size: 18px;
+                    line-height: 26px;
+                }
+            }
+        }
+    }
+}
+
+.sell-section {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    .image {
+        position: absolute;
+        top: 0;
+        right: -150px;
+        z-index: -1;
+    }
+
+    .section-header {
+        margin-bottom: 45px;
+    }
+
+    &--area {
+        display: flex;
+        margin-bottom: 36px;
+
+        &---left {
+            display: flex;
+        }
+
+        &---right {
+            display: flex;
+        }
+    }
+}
+
+.price-section {
+    text-align: center;
+    position: relative;
+
+    .image {
+        position: absolute;
+        top: -47px;
+        right: 460px;
+        z-index: -1;
+    }
+
+    .section-header {
+        margin-bottom: 45px;
+    }
+}
+
+// Responsive
+
+@include breakpoint-max(991px) {
+    .hero-section {
+        &--area {
+            &---content {
+                width: 100%;
+
+                .title {
+                    width: 630px;
+                }
+            }
+
+            &---image {
+                display: none;
+            }
+        }
+    }
+
+    .service-section {
+        &--image {
+            .image-bg {
+                right: 20px;
+                transform: translateY(-460px);
+            }
+        }
+    }
+
+    .sale-section {
+        &--area {
+            .with-header {
+                .section-header {
+                    p {
+                        margin-bottom: 24px;
+                    }
+                }
+            }
+        }
+    }
+
+    .price-section {
+        .image {
+            right: 180px;
+        }
+    }
+}
+
+@include breakpoint-max(767px) {
+    .hero-section {
+        &--area {
+            &---content {
+                .title {
+                    width: 405px;
+                    font-size: 40px;
+                    line-height: 48px;
+                    margin-bottom: 15px;
+                }
+
+                p {
+                    margin-bottom: 20px;
+                    line-height: 22px;
+                    font-size: 16px;
+                }
+
+                .hero-btn {
+                    padding: 15px 20px;
+                }
+            }
+        }
+    }
+
+    .service-section {
+        .service-btn {
+            margin-bottom: 50px;
+        }
+
+        &--image {
+            .image-main {
+                // left: 35px;
+            }
+        }
+
+        .image {
+            top: 340px;
+            right: 50px;
+        }
+    }
+
+    .sale-section {
+        &--area {
+            .with-header {
+                .section-header {
+                    p {
+                        margin-top: 14px;
+                        width: 100%;
+                        font-size: 16px;
+                        line-height: 22px;
+                    }
+                }
+            }
+        }
+    }
+
+    .sell-section {
+        .image {
+            right: -245px;
+        }
+        &--area {
+            flex-direction: column;
+            margin-bottom: 25px;
+            &---left {
+                justify-content: space-between;
+            }
+        }
+    }
+}
+
+@include breakpoint-max (440px) {
+    .hero-section--area---content .title {
+        width: 100%;
+    }
+}

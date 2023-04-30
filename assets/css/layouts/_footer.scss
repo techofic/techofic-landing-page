@@ -1,0 +1,175 @@
+// Add variables here
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Add styles here
+
+.footer-section {
+    padding-top: 80px;
+
+    .contact {
+        padding-left: 70px;
+    }
+
+    .link {
+        padding-left: 50px;
+    }
+
+    &--brand {
+        display: flex;
+        gap: 14px;
+        margin-bottom: 27px;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    &--social {
+        .image {
+            display: flex;
+            gap: 16px;
+            flex-direction: column;
+            margin-bottom: 40px;
+
+            img {
+                width: 170px;
+            }
+        }
+
+        .social-links {
+            a {
+
+                i {
+                    color: #f4f4f4;
+                    font-size: 20px;
+                    transition: all 0.5s ease;
+                }
+
+                &:not(:last-child) {
+                    margin-right: 26px;
+                }
+
+                &.active {
+                    i {
+                        color: $secondaryColor;
+                    }
+                }
+
+                &:hover {
+                    i {
+                        color: $secondaryColor ;
+                    }
+                }
+            }
+        }
+    }
+
+    &--copyright {
+        border-top: 1px solid #999999;
+        padding: 22px 0;
+        margin-top: 80px;
+        text-align: center;
+    }
+}
+
+.footer-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    color: $white;
+    margin-bottom: 24px;
+
+}
+
+.footer-links {
+    li {
+        transition: all 0.5s ease;
+
+        a {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 21px;
+        }
+
+        &:hover {
+            color: $white;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 17px;
+        }
+    }
+}
+
+@include breakpoint-max(991px) {
+    .footer-section {
+        .contact {
+            padding-left: 40px;
+        }
+        .link {
+            padding-left: 30px;
+        }
+        &--social {
+            .social-links {
+                a:not(:last-child) {
+                    margin-right: 12px;
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint-max(767px) {
+    .footer-section {
+        padding-top: 40px;
+        &--brand {
+            margin-bottom: 20px;
+        }
+        &--social {
+            .image {
+                margin-bottom: 20px;
+                img {
+                    width: 140px;
+                }
+            }
+            .social-links a {
+                &:not(:last-child) {
+                    margin-right: 5px;
+                }
+                i {
+                    font-size: 15px;
+                }
+            }
+        }
+        
+        &--copyright {
+            margin-top: 20px;
+        }
+        .footer-links li:not(:last-child) {
+            margin-bottom: 6px;
+        }
+    }
+    .footer-title {
+        font-size: 18px;
+        line-height: 16px;
+        margin-bottom: 16px;
+    }
+}
+
+@include breakpoint-max(576px) {
+    .footer-section {
+        text-align: center;
+        &--brand {
+            align-items: center;
+            justify-content: center;
+        }
+        &--social {
+            .image {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+    }
+}

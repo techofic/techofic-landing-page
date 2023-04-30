@@ -1,0 +1,111 @@
+@use './variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Add styles here
+
+.pt-30 {
+    padding-top: 30px;
+}
+
+.pt-50 {
+    padding-top: 50px;
+}
+
+.pt-60 {
+    padding-top: 60px;
+}
+
+.pt-70 {
+    padding-top: 70px;
+}
+
+.pt-100 {
+    padding-top: 100px;
+}
+
+.pt-120 {
+    padding-top: 120px;
+}
+
+.pb-30 {
+    padding-bottom: 30px;
+}
+
+.pb-50 {
+    padding-bottom: 50px;
+}
+
+.pb-70 {
+    padding-bottom: 70px;
+}
+
+.pb-100 {
+    padding-bottom: 100px;
+}
+
+.pb-120 {
+    padding-bottom: 120px;
+}
+
+.pb-150 {
+    padding-bottom: 150px;
+}
+
+.mt-100 {
+    margin-top: 100px;
+}
+
+.mb-24 {
+    margin-bottom: 24px;
+}
+
+.card-blue {
+    background-color: #e0e3ed;
+}
+
+.card-pink {
+    background-color: #fce5d8;
+}
+
+.card-ash {
+    background-color: #e3e3e3;
+}
+
+.price-ash {
+    background-color: #f4f4f4;
+}
+
+.price-white {
+    background-color: #ffffff;
+}
+
+.price-border-2 {
+    border: 1px solid #01A368;
+}
+
+.bg-black {
+    background-color: #01110B;
+}
+
+@include breakpoint-max(767px) {
+    .pt-70 {
+        padding-top: 50px;
+    }
+
+    .pt-100 {
+        padding-top: 50px;
+    }
+
+    .pt-120 {
+        padding-top: 60px;
+    }
+
+    .pb-100 {
+        padding-bottom: 50px;
+    }
+
+    .pb-120 {
+        padding-bottom: 60px;
+    }
+
+}

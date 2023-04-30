@@ -1,0 +1,71 @@
+// Add variables here
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+
+// Header 
+
+.navbar {
+    &.navbar-expand-lg {
+        padding: 30px 0;
+
+        .navbar {
+            &-brand {
+                padding: 0;
+                margin: 0 70px 0 0;
+    
+                display: flex;
+                align-items: baseline;
+                gap: 9px;
+    
+            }
+            &-nav {
+                .nav-item {
+                    .nav-link {
+                        padding: 0 25px 0 0;
+                        color: $primaryColor;
+                        font-weight: 400;
+                        transition: all 0.5s ease;
+
+                        &.active {
+                            color: $black;
+                        }
+                    }
+                    &:hover {
+                        .nav-link{
+                            color: $black;
+                        }
+                    }
+                    &:last-child {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+        .nav-btn {
+            gap: 12px;
+        }
+    }
+}
+
+.offcanvas {
+    padding: 20px;
+    &-btn {
+        border: none;
+        background: transparent;
+        font-size: 30px;
+    }
+    &-header {
+        padding: 0 30px;
+        margin: 30px 0;
+        color: $black;
+        .btn-close {
+            border: 1px solid $black;
+            border-radius: 50%;
+        }
+    }
+    &-body {
+        padding: 0 30px;
+        color: $black;
+    }
+}
