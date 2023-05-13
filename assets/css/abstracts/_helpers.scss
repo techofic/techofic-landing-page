@@ -86,6 +86,9 @@
 .bg-black {
     background-color: #01110B;
 }
+.bg-white {
+    background-color: #ffffff;
+}
 
 @include breakpoint-max(767px) {
     .pt-70 {

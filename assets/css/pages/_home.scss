@@ -11,6 +11,14 @@
         &---content {
             width: 50%;
 
+            .sub-title {
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 28px;
+                color: #01A368;
+                margin-bottom: 24px;
+            }
+
             .title {
                 font-size: 60px;
                 font-weight: 700;
@@ -165,9 +173,144 @@
     .section-header {
         margin-bottom: 45px;
     }
+
+    .image-bottom {
+        position: absolute;
+        right: -50px;
+        bottom: -180px;
+        z-index: -1;
+    }
+}
+
+.contact-section {
+    text-align: center;
+
+    .section-header {
+        margin-bottom: 45px;
+    }
+
+    .contact-area {
+        display: flex;
+        gap: 96px;
+
+        &--info {
+            width: 50%;
+            padding: 40px;
+            background-color: #01110B;
+            border-radius: 10px;
+            text-align: left;
+
+            .title {
+                font-weight: 700;
+                font-size: 28px;
+                line-height: 36px;
+                color: $white;
+                margin-bottom: 15px;
+            }
+
+            p {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 26px;
+                margin-bottom: 70px;
+            }
+
+            .info-list {
+                color: $white;
+                margin-bottom: 94px;
+                display: flex;
+
+                li {
+                    i {
+                        margin-right: 28px;
+                    }
+
+                    &:not(:last-child) {
+                        margin-bottom: 40px;
+                    }
+                }
+            }
+
+            .info-social {
+                display: flex;
+                gap: 24px;
+
+                i {
+                    color: $white;
+                    padding: 9px;
+                    background-color: #1B1B1B;
+                    border-radius: 50%;
+
+                    &:nth-child(2) {
+                        background-color: $white;
+                    }
+                }
+            }
+
+            .info-img {
+                position: relative;
+
+                &-1 {
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                }
+
+                &-2 {
+                    position: absolute;
+                    right: -41px;
+                    bottom: -40px;
+                }
+            }
+        }
+
+        &--form {
+            width: 50%;
+
+            form {
+                display: flex;
+                gap: 20px;
+                flex-direction: column;
+                position: relative;
+
+                input {
+                    border: 1px solid #E0E0E0;
+                    border-radius: 5px;
+                    padding: 13px;
+                    width: 100%;
+                }
+
+                textarea {
+                    border: 1px solid #E0E0E0;
+                    border-radius: 5px;
+                    padding: 13px;
+                    width: 100%;
+                    height: 184px;
+                }
+
+                button {
+                    border-radius: 0;
+                }
+
+                img {
+                    position: absolute;
+                    bottom: -150px;
+                    right: 270px;
+                }
+            }
+        }
+    }
 }
 
 // Responsive
+
+@include breakpoint-max(1200px) {
+    .contact-section {
+        .contact-area {
+            gap: 40px;
+        }
+    }
+}
 
 @include breakpoint-max(991px) {
     .hero-section {
@@ -211,6 +354,24 @@
         .image {
             right: 180px;
         }
+
+        .image-bottom {
+            display: none;
+        }
+    }
+
+    .contact-section {
+        .contact-area {
+            flex-direction: column;
+
+            &--info {
+                width: 100%;
+            }
+
+            &--form {
+                width: 100%;
+            }
+        }
     }
 }
 
@@ -218,6 +379,11 @@
     .hero-section {
         &--area {
             &---content {
+                .sub-title {
+                    font-size: 16px;
+                    margin-bottom: 20px;
+                }
+    
                 .title {
                     width: 405px;
                     font-size: 40px;
@@ -274,11 +440,70 @@
         .image {
             right: -245px;
         }
+
         &--area {
             flex-direction: column;
             margin-bottom: 25px;
+
             &---left {
                 justify-content: space-between;
+            }
+        }
+    }
+
+    .contact-section {
+        .contact-area {
+            gap: 25px;
+
+            &--info {
+                padding: 40px;
+
+                .title {
+                    font-size: 24px;
+                    line-height: 20px;
+                }
+
+                p {
+                    line-height: 20px;
+                    margin-bottom: 40px;
+                }
+
+                .info-list {
+                    margin-bottom: 40px;
+
+                    li {
+                        i {
+                            margin-right: 20px;
+                        }
+
+                        &:not(:last-child) {
+                            margin-bottom: 15px;
+                        }
+                    }
+                }
+
+                .info-social {
+                    gap: 18px;
+
+                    i {
+                        padding: 7px;
+                    }
+                }
+            }
+
+            &--form {
+
+                form {
+                    gap: 15px;
+
+                    textarea {
+                        height: 100px;
+                    }
+
+                    img {
+                        display: none;
+                    }
+                }
             }
         }
     }
@@ -287,5 +512,46 @@
 @include breakpoint-max (440px) {
     .hero-section--area---content .title {
         width: 100%;
+    }
+
+    .contact-section {
+        .contact-area {
+            gap: 20px;
+
+            &--info {
+                padding: 20px;
+
+                .title {
+                    font-size: 20px;
+                }
+
+                p {
+                    font-size: 14px;
+                    margin-bottom: 20px;
+                }
+
+                .info-list {
+                    margin-bottom: 20px;
+
+                    li {
+                        i {
+                            margin-right: 10px;
+                        }
+
+                        &:not(:last-child) {
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+
+                .info-social {
+                    gap: 15px;
+                }
+
+                .info-img {
+                    display: none;
+                }
+            }
+        }
     }
 }
