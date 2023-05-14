@@ -1017,6 +1017,9 @@ body {
   text-align: center;
   margin-bottom: 45px;
 }
+.faq-section--area {
+  padding: 0 170px;
+}
 .faq-section--area .text-box {
   padding: 46px 38px;
   border: 2px solid #01A368;
@@ -1050,7 +1053,63 @@ body {
   box-shadow: 0px 5px 16px rgba(8, 15, 52, 0.06);
   border-radius: 50%;
 }
+.faq-section--area .img {
+  position: relative;
+}
+.faq-section--area .img .img1 {
+  position: absolute;
+  top: -700px;
+  left: -200px;
+}
+.faq-section--area .img .img2 {
+  position: absolute;
+  top: -570px;
+  left: -335px;
+}
+.faq-section--area .img .img3 {
+  position: absolute;
+  bottom: 600px;
+  right: -330px;
+}
 
+@media (max-width: 1200px) {
+  .faq-section--area {
+    padding: 0 80px;
+  }
+  .img {
+    display: none;
+  }
+}
+@media (max-width: 991px) {
+  .faq-section--area {
+    padding: 0;
+  }
+}
+@media (max-width: 767px) {
+  .faq-section--area .text-box {
+    padding: 25px 15px;
+    margin-bottom: 20px;
+  }
+  .faq-section--area .text-box .title {
+    font-size: 18px;
+    line-height: 18px;
+    margin-bottom: 15px;
+  }
+  .faq-section--area .text-box p {
+    font-size: 14px;
+  }
+  .faq-section--area .que-list li {
+    padding: 18px 18px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .faq-section--area .que-list li:not(:last-child) {
+    margin-bottom: 24px;
+  }
+  .faq-section--area .que-list li i {
+    padding: 8px;
+  }
+}
 body {
   color: #999999;
 }/*# sourceMappingURL=style.css.map */
