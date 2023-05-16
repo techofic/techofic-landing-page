@@ -1,0 +1,186 @@
+// Add variables here
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.success-section {
+
+    .success {
+        &-icon {
+            background-color: #35383e;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            margin-left: auto;
+            margin-right: auto;
+            transform: translate(0, 25px);
+
+            i {
+                border-radius: 50%;
+                width: 24px;
+                height: 24px;
+                transform: translate(12px, 12px);
+                padding: 5px;
+                background-color: #41D195;
+                color: $black;
+
+            }
+        }
+
+        &-area {
+            width: 570px;
+            padding: 80px 25px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #25282E;
+            border-radius: 33.3078px 33.3078px 0px 0px;
+
+            .title {
+                font-weight: 600;
+                font-size: 33px;
+                line-height: 47px;
+                text-align: center;
+                color: $white;
+                margin-bottom: 10px;
+            }
+
+            .sub-title {
+                font-size: 24px;
+                line-height: 37px;
+                text-align: center;
+                color: rgba(255, 255, 255, 0.72);
+                padding-bottom: 40px;
+                margin-bottom: 40px;
+                border-bottom: 1.66539px solid rgba(255, 255, 255, 0.16);
+            }
+
+            .order-info {
+                display: flex;
+                justify-content: space-between;
+                color: $white;
+                margin-bottom: 40px;
+
+                li {
+                    margin-bottom: 10px;
+                }
+
+                &--details {
+                    text-align: right;
+                }
+            }
+
+            .scs-btn {
+                width: 310px;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 13px 40px;
+                display: flex;
+                background: transparent;
+                border: 0;
+                outline: none;
+                font-size: 23.3155px;
+                line-height: 40px;
+                text-align: center;
+                color: rgba(255, 255, 255, 0.72);
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                justify-content: center;
+
+                i {
+                    font-size: 30px;
+                }
+            }
+        }
+
+        &-bottom {
+            display: flex;
+            gap: 13px;
+            transform: translate(75px, -12px);
+
+            span {
+                width: 30px;
+                height: 22px;
+                display: block;
+                background: $white;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+@include breakpoint-max(991px) {
+    .success-section {
+        .success {
+            &-bottom {
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint-max(767px) {
+    .success-section {
+        .success {
+            &-area {
+                width: 500px;
+                padding: 50px 25px;
+
+                .title {
+                    font-size: 26px;
+                    line-height: 15px;
+                }
+
+                .sub-title {
+                    font-size: 18px;
+                    line-height: 28px;
+                    padding-bottom: 20px;
+                    margin-bottom: 20px;
+                }
+
+                .order-info {
+                    margin-bottom: 20px;
+
+                    li {
+                        margin-bottom: 5px;
+                    }
+                }
+
+                .scs-btn {
+                    padding: 8px 72px;
+                    font-size: 18px;
+                    line-height: 20px;
+                    gap: 8px;
+
+                    i {
+                        font-size: 22px;
+                    }
+                }
+            }
+
+            // &-bottom {
+            //     span {
+            //         display: none;
+            //     }
+            // }
+
+        }
+    }
+}
+
+@include breakpoint-max(575px) {
+    .success-section {
+        .success {
+            &-area {
+                width: 100%;
+
+                .scs-btn {
+                    width: 100%;
+                    padding: 0px;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

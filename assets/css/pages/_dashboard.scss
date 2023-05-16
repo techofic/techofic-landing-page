@@ -1,0 +1,191 @@
+// Add variables here
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.section-header {
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header li {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    font-size: 18px;
+    color: #919191;
+    border-bottom: 3px solid  #EAEAEA;
+    // width: 700px;
+
+    &:first-child{
+        padding-left: 0;
+    }
+}
+
+.section-header li i {
+    margin-right: 10px;
+}
+
+.section-header li.active {
+    // width: 82px;
+    color: #424242;
+    border-bottom: 3px solid #01A368;
+}
+
+.dashboard-about,
+.dashboard-profile {
+    display: none;
+}
+
+.dashboard-about.active,
+.dashboard-profile.active {
+    display: block;
+}
+
+.dashboard-section {
+    .dashboard {
+        &-main {
+            display: flex;
+            gap: 70px;
+        }
+
+        &-img {
+            width: 35%;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        &-area {
+            width: 65%;
+
+            .title {
+                font-weight: 500;
+                font-size: 36px;
+                line-height: 40px;
+                color: #424242;
+                margin-bottom: 18px;
+
+                span {
+                    font-style: italic;
+                }
+            }
+
+            .ratings {
+                span {
+                    font-size: 14px;
+                    line-height: 22px;
+                    color: rgba(66, 66, 66, 0.7);
+                    margin-bottom: 6px;
+                }
+
+                .icon {
+                    display: flex;
+                    gap: 10px;
+                    align-items: baseline;
+                    margin-bottom: 50px;
+
+                    i {
+                        color: #01A368;
+                    }
+
+                    h5 {
+                        font-weight: 700;
+                        font-size: 24px;
+                        line-height: 34px;
+                        color: rgba(66, 66, 66, 0.7);
+                    }
+                }
+            }
+        }
+
+        &-about {
+            h6 {
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 26px;
+                color: rgba(66, 66, 66, 0.7);
+                margin-bottom: 18px;
+            }
+
+            &--info {
+                display: flex;
+                gap: 60px;
+
+                li {
+                    font-size: 18px;
+                    line-height: 26px;
+                    color: #424242;
+                    margin-bottom: 18px;
+                    font-weight: 400;
+
+                    &.green {
+                        color: #01A368;
+                    }
+                }
+
+                .main {
+                    li {
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+
+        &-profile {
+            form {
+                input {
+                    width: 100%;
+                    padding: 13px 20px;
+                    margin-bottom: 18px;
+                    border: 1px solid #E0E0E0;
+                    border-radius: 5px;
+                }
+
+                button {
+                    padding: 18px 60px;
+                    border-radius: 5px;
+                }
+
+                .radio {
+                    display: flex;
+                    gap: 18px;
+
+                    &-btn {
+                        width: 50%;
+                        padding: 18px 160px;
+                        margin-bottom: 18px;
+                        border: 1px solid #E0E0E0;
+                        border-radius: 5px;
+                        display: flex;
+                        align-items: center;
+
+                        input {
+                            width: 15px;
+                            height: 15px;
+                            padding: 0;
+                            margin-bottom: 0;
+                            border: none;
+                            border-radius: 0;
+                            margin-right: 8px;
+
+
+                        }
+
+                        label {
+                            font-size: 14px;
+                            line-height: 22px;
+                            color: #656565;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@include breakpoint-max(991px) {}

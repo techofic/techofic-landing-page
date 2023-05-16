@@ -1,0 +1,237 @@
+// Add variables here
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.payment-section {
+    .payment-area {
+        display: flex;
+        gap: 150px;
+
+        &--form {
+            width: 60%;
+
+            .title {
+                margin-bottom: 45px;
+                color: #424242;
+                font-weight: 500;
+                font-size: 36px;
+                line-height: 24px;
+
+                span {
+                    font-style: italic;
+                }
+            }
+
+            form {
+                label {
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 22px;
+                    color: #697386;
+                    margin-bottom: 8px;
+                    width: 100%;
+                }
+
+                input {
+                    padding: 9px 16px;
+                    border: 1px solid rgba(60, 66, 87, 0.12);
+                }
+
+                .form {
+                    &-country {
+                        input {
+                            border-radius: 8px 8px 0px 0px;
+                            width: 100%;
+                        }
+                    }
+
+                    &-date {
+                        display: flex;
+                        margin-bottom: 20px;
+
+                        input {
+                            width: 50%;
+                            border-top: 0;
+
+                            &.date {
+                                border-radius: 0px 0px 0px 8px;
+                            }
+
+                            &.cvc {
+                                border-radius: 0px 0px 8px 0px;
+                            }
+                        }
+                    }
+                }
+
+                select {
+                    width: 100%;
+                    padding: 9px 16px;
+                    color: #424242;
+                    border: 1px solid #EAECF0;
+                    border-radius: 8px 8px 0px 0px;
+                }
+
+                .zip {
+                    margin-bottom: 16px;
+
+                    input {
+                        width: 100%;
+                        padding: 9px 16px;
+                        border: 1px solid #EAECF0;
+                        border-radius: 0px 0px 8px 8px;
+                    }
+                }
+            }
+
+            button {
+                width: 100%;
+                border-radius: 0;
+                padding: 16px;
+            }
+        }
+
+        &--summary {
+            width: 40%;
+            box-shadow: 0px 1px 8px rgba(50, 50, 50, 0.1);
+            border-radius: 5px;
+            padding: 32px;
+
+            .title {
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 32px;
+                color: #424242;
+                margin-bottom: 32px;
+
+                span {
+                    font-style: italic;
+                }
+            }
+
+            &---display {
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid #D1D1D8;
+                ;
+                margin-bottom: 24px;
+
+                ul {
+                    li {
+                        margin-bottom: 24px;
+                        color: #424242;
+
+                        &.blue {
+                            color: #3AA39F;
+                        }
+                    }
+                }
+            }
+
+            &---total {
+                display: flex;
+                justify-content: space-between;
+
+                ul {
+                    li {
+                        margin-bottom: 24px;
+                        color: #424242;
+
+                        &.head {
+                            font-weight: 700;
+                            font-size: 24px;
+                            line-height: 20px;
+                            color: #424242;
+                            text-align: right;
+                        }
+                    }
+                }
+            }
+
+            input {
+                border: 1px solid #D1D1D8;
+                border-radius: 5px;
+                padding: 16px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@include breakpoint-max(1200px) {
+    .payment-section {
+        .payment-area {
+            gap: 50px;
+        }
+    }
+}
+
+@include breakpoint-max(991px) {
+    .payment-section {
+        .payment-area {
+            gap: 50px;
+            flex-direction: column;
+
+            &--form {
+                width: 100%;
+            }
+
+            &--summary {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@include breakpoint-max(767px) {
+    .payment-section {
+        .payment-area {
+
+            &--form {
+                .title {
+                    margin-bottom: 20px;
+                    font-size: 24px;
+                    line-height: 15px;
+                }
+
+                button {
+                    padding: 12px;
+                    font-size: 14px;
+                }
+
+                form {
+                    .form-date {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+
+            &--summary {
+                padding: 25px;
+
+                .title {
+                    font-size: 18px;
+                    line-height: 15px;
+                    margin-bottom: 15px;
+                }
+
+                &---display {
+                    ul li {
+                        margin-bottom: 12px;
+                    }
+                }
+                &---total {
+                    ul li {
+                        margin-bottom: 12px;
+                        &.head {
+                            font-size: 16px;
+                        }
+                    }
+                }
+                input {
+                    padding: 10px 12px;
+                }
+            }
+        }
+    }
+}
