@@ -95,7 +95,8 @@
         &-bottom {
             display: flex;
             gap: 13px;
-            transform: translate(75px, -12px);
+            justify-content: center;
+            transform: translate(0px, -12px);
 
             span {
                 width: 30px;
@@ -112,8 +113,11 @@
     .success-section {
         .success {
             &-bottom {
+                transform: translate(0px, -8px);
+
                 span {
-                    display: none;
+                    width: 25px;
+                    height: 17px;
                 }
             }
         }
@@ -158,13 +162,6 @@
                     }
                 }
             }
-
-            // &-bottom {
-            //     span {
-            //         display: none;
-            //     }
-            // }
-
         }
     }
 }
@@ -179,6 +176,15 @@
                     width: 100%;
                     padding: 0px;
                     font-size: 16px;
+                }
+            }
+
+            &-bottom {
+                transform: translate(0px, -6px);
+
+                span {
+                    width: 20px;
+                    height: 12px;
                 }
             }
         }

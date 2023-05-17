@@ -2,36 +2,42 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
-.section-header {
+.tab-header {
     display: flex;
     // justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    border-bottom: 3px solid #EAEAEA;
+    gap: 20px;
+
 }
 
-.section-header li {
+.tab-header li {
     cursor: pointer;
     display: flex;
     align-items: center;
-    padding-left: 20px;
+    // padding-left: 20px;
     font-size: 18px;
     color: #919191;
-    border-bottom: 3px solid  #EAEAEA;
+    transition: all 0.5s ease;
+
     // width: 700px;
 
-    &:first-child{
+    &:first-child {
         padding-left: 0;
     }
 }
 
-.section-header li i {
+.tab-header li i {
     margin-right: 10px;
 }
 
-.section-header li.active {
+.tab-header li.active {
     // width: 82px;
     color: #424242;
     border-bottom: 3px solid #01A368;
+    transition: all 0.5s ease-in-out;
+
 }
 
 .dashboard-about,
@@ -52,15 +58,16 @@
         }
 
         &-img {
-            width: 35%;
+            width: 40%;
 
             img {
                 height: 100%;
+                object-fit: cover;
             }
         }
 
         &-area {
-            width: 65%;
+            width: 60%;
 
             .title {
                 font-weight: 500;
@@ -156,12 +163,13 @@
 
                     &-btn {
                         width: 50%;
-                        padding: 18px 160px;
+                        padding: 18px;
                         margin-bottom: 18px;
                         border: 1px solid #E0E0E0;
                         border-radius: 5px;
                         display: flex;
                         align-items: center;
+                        justify-content: center;
 
                         input {
                             width: 15px;
@@ -187,5 +195,119 @@
     }
 }
 
+@include breakpoint-max(1200px) {
+    .dashboard-section {
+        .dashboard {
+            &-main {
+                gap: 40px;
+            }
 
-@include breakpoint-max(991px) {}
+            &-img {
+                width: 50%;
+            }
+
+            &-area {
+                width: 50%;
+            }
+        }
+    }
+}
+
+@include breakpoint-max(767px) {
+    .tab-header {
+        margin-bottom: 15px;
+
+        li {
+            font-size: 16px;
+        }
+    }
+
+    .dashboard-section {
+        .dashboard {
+            &-main {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            &-img {
+                width: 100%;
+
+                img {
+                    width: 100%;
+                    height: 450px;
+                    object-fit: none;
+                }
+            }
+
+            &-area {
+                width: 100%;
+
+                .title {
+                    font-size: 26px;
+                    line-height: 20px;
+                    margin-bottom: 10px;
+                }
+
+                .ratings .icon {
+                    margin-bottom: 20px;
+
+                    h5 {
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            &-about {
+                h6 {
+                    font-size: 16px;
+                    line-height: 18px;
+                    margin-bottom: 10px;
+                }
+
+                &--info li {
+                    font-size: 16px;
+                    line-height: 18px;
+                    margin-bottom: 10px;
+                }
+            }
+
+            &-profile form {
+                input {
+                    padding: 11px 15px;
+                    margin-bottom: 12px;
+                }
+
+                .radio-btn {
+                    padding: 12px;
+                    margin-bottom: 12px;
+                }
+                button {
+                    padding: 12px 30px;
+                    font-size: 14px;
+                }
+            }
+
+            // &-area {
+            //     width: 100%;
+            //     text-align: center;
+
+            //     .ratings {
+            //         .icon {
+            //             justify-content: center;
+            //         }
+            //     }
+            // }
+            // &-about--info {
+            //     justify-content: center;
+
+            //     ul {
+            //         text-align: right;
+
+            //         &.main {
+            //             text-align: left;
+            //         }
+            //     }
+            // }
+        }
+    }
+}
